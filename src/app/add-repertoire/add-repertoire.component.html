@@ -1,0 +1,21 @@
+<div *ngIf="isLoading" style=" display: table; margin: 0 auto;padding-top: 300px;">
+    <mat-spinner ></mat-spinner>
+</div>
+<div style="margin: 100px;" *ngIf="!isLoading">
+    <div *ngIf="movie.errors?.required" style="color: red;">
+        Movie and date are required.
+    </div>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose movie</mat-label>
+        <mat-select [(ngModel)]="selectedMovieId" #movie="ngModel" required>
+          <mat-option *ngFor="let movie of moviesList" value="{{movie.id}}">{{movie.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br><br>
+      <div>
+        <input type="datetime-local" [(ngModel)]="date" required><br><br><br><br>
+      </div>
+
+    <button mat-raised-button color="primary" (click)="saveRepertoire()">Zapisz</button>
+</div>
+

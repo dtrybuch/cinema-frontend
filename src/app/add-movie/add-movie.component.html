@@ -1,0 +1,15 @@
+<div style="margin: 100px;">
+    <label for="fname">Title:</label><br>
+    <input type="text" [(ngModel)]="addedMovie.title" ><br>
+    <label for="lname">Length:</label><br>
+    <input type="number" [(ngModel)]="addedMovie.length"><br><br>
+    <label for="lname">Type:</label><br>
+    <input type="text" [(ngModel)]="addedMovie.type"><br><br>
+    <label for="lname">Image:</label><br>
+    <input type="file"
+        id="file"
+        (change)="handleFileInput($event)"
+        accept="image/jpeg"> <br><br>
+    <button mat-raised-button color="primary" (click)="saveMovie()">Zapisz</button>
+
+</div>

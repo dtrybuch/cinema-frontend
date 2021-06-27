@@ -1,0 +1,7 @@
+<ngb-carousel *ngIf="movies.length > 2" style="text-align: center; width: 100%; background-color: black; height: 500px;">
+  <ng-template ngbSlide *ngFor="let movie of movies">
+    <div class="picsum-img-wrapper">
+      <img src="{{getImageUrl(movie)}}" style="height: 500px;" alt="Random first slide">
+    </div>
+  </ng-template>
+</ngb-carousel>

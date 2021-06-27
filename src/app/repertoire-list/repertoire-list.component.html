@@ -1,0 +1,25 @@
+<div style="margin: 20px;">
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div *ngFor="let repertoire of repertoires | searchRepertoire: selectedDate">
+    <img src='{{getImageUrl(repertoire)}}' style="height: 200px; margin-bottom: 20px;">
+    <div style="display: inline-block;">
+      <div style="margin-left: 20px;">
+        <br />
+        {{repertoire.movie.title}}
+        <br />
+        Wybierz godzinę seansu: <br />
+        <a routerLink="/seats/{{repertoire.id}}" ><button>{{repertoire.date | date:'medium'}}</button></a>
+        <br /> {{repertoire.movie.type}} | {{repertoire.movie.length}} min
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div *ngIf="isLoading" style=" display: table; margin: 0 auto;padding-top: 300px;">
+    <mat-spinner ></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+    <app-slider [movies]="threeMovies"></app-slider>
+    <app-repertoire-list [repertoires]="repertoires" ></app-repertoire-list>
+</div>
