@@ -17,7 +17,7 @@
         {{repertoire.movie.title}}
         <br />
         Wybierz godzinę seansu: <br />
-        <a routerLink="/seats/{{repertoire.id}}" ><button>{{repertoire.date | date:'medium'}}</button></a>
+        <a routerLink="/seats/{{repertoire.id}}" ><button mat-raised-button color="primary">{{repertoire.date | date:'medium'}}</button></a>
         <br /> {{repertoire.movie.type}} | {{repertoire.movie.length}} min
       </div>
     </div>
